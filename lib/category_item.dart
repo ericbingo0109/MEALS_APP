@@ -10,6 +10,7 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
+    /*
     Navigator.of(ctx).push(
       MaterialPageRoute(
         // tip : control + space可以顯示出可用的選項
@@ -17,6 +18,15 @@ class CategoryItem extends StatelessWidget {
           return CategoryMealsScreen(id, title);
         },
       ),
+    );
+    */
+    // 改用pushNamed的方式傳遞data
+    Navigator.of(ctx).pushNamed(
+      '/category-meals',
+      arguments: {
+        'id': id,
+        'title': title,
+      },
     );
   }
 
