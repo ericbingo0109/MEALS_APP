@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import './category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color color;
 
   // const CategoryItem({Key key, this.title, this.color}) : super(key: key);
-  CategoryItem(this.title, this.color);
+  CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         // tip : control + space可以顯示出可用的選項
         builder: (_) {
-          return CategoryMealsScreen();
+          return CategoryMealsScreen(id, title);
         },
       ),
     );
