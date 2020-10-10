@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
+  static const routeName = '/category-meals';
+  //我原本這樣寫但是build後會Error: Getter not found: 'routeName' 不用加String就沒問題了..
+  // static const String routeName = '/category-meals';
   // final String categoryId;
   // final String categoryTitle;
 

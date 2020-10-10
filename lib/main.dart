@@ -30,9 +30,11 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               )),
-      home: CategoriesScreen(),
+      // home: CategoriesScreen(),
+      initialRoute: '/', // default is '/'
       routes: {
-        '/category-meals': (context) => CategoryMealsScreen(),
+        '/': (context) => CategoriesScreen(), //等同上面的 home: CategoriesScreen(),
+        CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
       },
     );
   }

@@ -22,7 +22,7 @@ class CategoryItem extends StatelessWidget {
     */
     // 改用pushNamed的方式傳遞data
     Navigator.of(ctx).pushNamed(
-      '/category-meals',
+      CategoryMealsScreen.routeName,
       arguments: {
         'id': id,
         'title': title,
