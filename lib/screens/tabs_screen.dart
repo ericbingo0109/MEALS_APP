@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/main_drawer.dart';
 import '../screens/categories_screen.dart';
 import '../screens/favorites_screen.dart';
 
@@ -8,9 +9,15 @@ class TabsScreen extends StatefulWidget {
 }
 
 class _TabsScreenState extends State<TabsScreen> {
-  final List<Widget> _pages = [
-    CategoriesScreen(),
-    FavoritesScreen(),
+  final List<Map<String, Object>> _pages = [
+    {
+      'page': CategoriesScreen(),
+      'title': 'Categories',
+    },
+    {
+      'page': FavoritesScreen(),
+      'title': 'Your Favorites',
+    },
   ];
 
   int _selectedPageIndex = 0;
@@ -25,15 +32,16 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meals'),
+        title: Text(_pages[_selectedPageIndex]['title']),
       ),
-      body: _pages[_selectedPageIndex],
+      drawer: MainDrawer(),
+      body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
         backgroundColor: Theme.of(context).primaryColor,
         unselectedItemColor: Colors.white,
         selectedItemColor: Theme.of(context).accentColor,
-        currentIndex: _selectedPageIndex,
+        currentIndex: _selectedPageIndex, //讓BottomNavigationBar知道哪個tab被選到
         type: BottomNavigationBarType.shifting, //default is fixed
         items: [
           BottomNavigationBarItem(
