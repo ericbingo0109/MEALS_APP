@@ -62,3 +62,15 @@ class MainDrawer extends StatelessWidget {
     );
   }
 }
+/**
+ * 測驗16
+ * Q: What's a difference between using Tabs (no matter which ones) and using push() / pushNamed()?
+ * A: Tabs replace the current screen (or a part of it) with a new one, 
+ *    push() / pushNamed() add a new screen to the stack.
+ * Tabs basically switch between screens, whereas push & pushNamed add and remove screens to / from the stack.
+ * 
+ * Q:Which widget is important for both Tabs and Drawers?
+ * A: The Scaffold widget - you register both there. 
+ * You register both drawers and tab bars in the Scaffold 
+ * (Tabs can potentially also be registered on the AppBar but that's also registered in the Scaffold widget in turn).
+ */
