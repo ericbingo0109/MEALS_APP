@@ -67,3 +67,22 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
     );
   }
 }
+/**
+ * 測驗17
+ * Q:What's the core difference between pushReplacement() and push()?
+ * A:pushReplacement() replaces the current screen in the stack
+ * 
+ * Q:Consider this snippet:
+ *    push(...).then(fn)
+ *   where fn is a function.
+ *  When does that function execute?
+ * A: As soon as the new screen is popped.
+ * then() triggers fn as soon as you leave (pop) the new screen that was loaded via push()
+ * 原本push上去的新screen在被popped之後（例如：刪除）才執行then裡面的fn
+ * 
+ * Q:How can you retrieve the data passed back via Navigator.of(context).pop('some data')?
+ * A:You can retrieve it as an argument to the function you use in then() after push()/pushNamed() etc. 
+ * The data you pass to pop() is automatically passed into the function (as an argument) 
+ * that executes inside of then() once pop() is triggered.
+ * 
+ */
