@@ -50,6 +50,19 @@ class MyApp extends StatelessWidget {
   }
 }
 /**
+ * 測驗 15
+ * Q:What's the idea of onGenerateRoute?
+ * A:It takes a function which executes for any named navigation action (= pushNamed()) for which no registered route was found in the routes table. 
+ * You should return a navigation action (e.g. MaterialPageRoute) in onGenerateRoute.
+ * onGenerateRoute is your fallback/ option to have more control about the creation + configuration 
+ * of routing actions (= MaterialPageRoute that then loads a specific screen widget).
+ * 
+ * Q:What's the difference between onGenerateRoute and onUnknownRoute?
+ * A: onGenerateRoute executes for any unregistered named route, 
+ * onUnknownRoute executes if onGenerateRoute isn't defined or doesn't return a valid navigation action.
+ * 
+ */
+/**
  * 測驗14
  * Q: What's a "Screen" in a Flutter App?
  * A: A widget which controls the entire screen (or at least makes up the main content of the screen).
