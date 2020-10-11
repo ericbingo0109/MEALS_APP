@@ -38,6 +38,14 @@ class MyApp extends StatelessWidget {
         CategoryMealsScreen.routeName: (context) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (context) => MealDetailScreen(),
       },
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        // return MaterialPageRoute(builder: (context) => CategoriesScreen());
+      },
+      onUnknownRoute: (settings) {
+        // 這是當找不到對應的頁面時的處理function，可以放404之類的頁面
+        return MaterialPageRoute(builder: (context) => CategoriesScreen());
+      },
     );
   }
 }
