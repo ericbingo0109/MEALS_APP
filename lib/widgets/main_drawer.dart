@@ -29,14 +29,17 @@ class MainDrawer extends StatelessWidget {
             'Meals',
             Icons.restaurant,
             () {
-              return Navigator.of(context).pushNamed('/');
+              // 原本用push可能會導致stack越來越多screen疊上去
+              // 改用pushReplacementNamed，避免screen會一層一層疊上stack的問題
+              return Navigator.of(context).pushReplacementNamed('/');
             },
           ),
           buildListTile(
             'Filters',
             Icons.settings,
             () {
-              return Navigator.of(context).pushNamed(FiltersScreen.routeName);
+              return Navigator.of(context)
+                  .pushReplacementNamed(FiltersScreen.routeName);
             },
           ),
         ],
