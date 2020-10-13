@@ -9,7 +9,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeItem;
+  // final Function removeItem;
 
   MealItem({
     @required this.id,
@@ -18,7 +18,7 @@ class MealItem extends StatelessWidget {
     @required this.duration,
     @required this.complexity,
     @required this.affordability,
-    @required this.removeItem,
+    // @required this.removeItem,
   });
 
   void selectMeal(BuildContext context) {
@@ -32,7 +32,7 @@ class MealItem extends StatelessWidget {
       print(result); //傳入的mealId
       if (result != null) {
         // 表示有點擊delete button, id傳入
-        removeItem(result);
+        // removeItem(result);
       }
     });
   }

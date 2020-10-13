@@ -4,6 +4,10 @@ import '../dummy_data.dart';
 class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detail';
 
+  final Function toggleFavorte;
+  final Function isFavorte;
+  MealDetailScreen(this.toggleFavorte, this.isFavorte);
+
   @override
   Widget build(BuildContext context) {
     final mealId = ModalRoute.of(context).settings.arguments as String;
@@ -64,11 +68,11 @@ class MealDetailScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(
-            Icons.delete,
+            // 是否最愛 ? 填滿star : 框線star
+            isFavorte(mealId) ? Icons.star : Icons.star_border,
           ),
-          onPressed: () {
-            Navigator.of(context).pop(mealId);
-          },
+          // 記得傳入mealId 避免報錯type '(String) => void' is not a subtype of type '() => void'
+          onPressed: () => toggleFavorte(mealId),
         ));
   }
 
