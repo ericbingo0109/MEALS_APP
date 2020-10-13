@@ -30,3 +30,10 @@ class FavoritesScreen extends StatelessWidget {
     }
   }
 }
+
+/**
+ * 這邊還有點小問題：
+ * 移除最愛後，回到上一頁仍然會看到並沒有移除，因上一頁是cached
+ * 要回到其他頁面然後再去favorite頁面後才會看到meal的確已經被移除了
+ * 這問題會在下一個課程state management解決
+ */
